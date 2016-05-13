@@ -1,0 +1,138 @@
+# These relations don't exist in OBI but they seem useful here.
+
+denoted by
+type:> owl:ObjectProperty
+comment: inverse of 'denotes'
+
+has textual content
+type:> owl:DataProperty
+rdfs:domain:> textual entity
+rdfs:range:> xsd:String
+definition: a relation between a textual entity and a string that encodes its text.
+
+has duration
+type:> owl:DataProperty
+rdfs:domain:> process
+rdfs:range:> xsd:Real
+definition: a relation between a process and its duration (should have a unit)
+
+
+# An OBI representation of the investigation and its parts: exactly what was done, without drawing additional conclusions.
+# See the attached spreadsheet for most of the details.
+
+Panepinto et al. 2002 investigation
+type:> investigation
+has part:> Panepinto et al. 2002 study design
+
+Panepinto et al. 2002 study design
+type:> study design
+has part:> minimal medium duration independent variable
+has part:> rhbA gene expression dependent variable
+
+minimal medium duration independent variable
+type:> study design independent variable
+is about:> exposure time setting A
+is about:> exposure time setting B
+is about:> exposure time setting C
+is about:> exposure time setting D
+is about:> exposure time setting E
+
+rhbA gene expression dependent variable
+type:> study design dependent variable
+is about:> relative gene expression of rhbA to gpdA in A. fumigatus time specimen A
+is about:> relative gene expression of rhbA to gpdA in A. fumigatus time specimen B
+is about:> relative gene expression of rhbA to gpdA in A. fumigatus time specimen C
+is about:> relative gene expression of rhbA to gpdA in A. fumigatus time specimen D
+is about:> relative gene expression of rhbA to gpdA in A. fumigatus time specimen E
+
+A. fumigatus culture
+type:> A. fumigatus
+
+rich medium
+type:> culture medium
+comment: nitrogen rich
+
+rich medium exposure
+type:> material processing
+has participant:> A. fumigatus culture
+has participant:> rich medium
+
+minimal medium
+type:> culture medium
+comment: nitrogen poor
+
+SYBR Green stain
+type:> molecular stain
+
+rhbA primers
+type:> reagent
+
+gdpA primers
+type:> reagent
+
+
+# An OBI-representation of the article about the investigation.
+
+Panepinto et al. 2002 article
+type:> journal article
+is about:> Panepinto et al. 2002 investigation
+denoted by:> Pubmed:12135576
+
+figure 4AB
+type:> figure
+part of:> Panepinto et al. 2002 article
+comment: Figure 4AB from Panepinto et al. 2002
+
+caption 4AB
+type:> caption
+is about:> figure 4AB
+part of:> Panepinto et al. 2002 article
+has textual content: RT-PCR analysis of rhbA expression in response to nitrogen starvation. (A) Image of SYBR Green stained PCR products obtained with rhbA primers (top panel) and gpdA primers (bottom panel) at 0, 15, 30, 60, and 120 min after shift from rich medium to minimal medium lacking nitrogen. (B) Bar graph representing rhbA message abundance normalized to the gpdA message.
+
+hypothesis 4AB
+type:> hypothesis textual entity
+part of:> Panepinto et al. 2002 article
+has textual content: To investigate a potential role for rhbA in nitrogen starvation in A. fumigatus, we set out to determine if rhbA message level would be altered in response to changes in nutrient availability.
+
+conclusion 4AB.1
+type:> conclusion textual entity
+part of:> Panepinto et al. 2002 article
+has textual content: Thirty minutes after the shift from rich medium to minimal medium lacking nitrogen, rhbA message levels increased over 5-fold and remained high after 60 and 120 min (Figs. 4A and B).
+
+conclusion 4AB.2
+type:> conclusion textual entity
+part of:> Panepinto et al. 2002 article
+has textual content: Although these results are consistent with a role for rhbA in the response to nitrogen starvation, the nutritional down-shift from rich medium to minimal medium also involves reduced availability of nutrients other than nitrogen.
+
+conclusion 4AB statement
+type:> conclusion based on data
+part of:> Panepinto et al. 2002 article
+has textual content: The rhbA gene product is a participant in the biological process of cellular response to nitrogen starvation
+
+# TODO: An OBI representation of the conclusions of the investigation, which may build in various assumptions and refer to other investigations.
+
+rhbA
+type:> owl:Class
+
+nitrogen starvation
+type:> owl:Class
+subclass of:> biological process
+
+drawing a conclusion 1
+type:> drawing a conclusion based on data
+has input:> exposure time setting A
+has input:> exposure time setting B
+has input:> exposure time setting C
+has input:> exposure time setting D
+has input:> exposure time setting E
+has input:> normalized measurement datum A
+has input:> normalized measurement datum B
+has input:> normalized measurement datum C
+has input:> normalized measurement datum D
+has input:> normalized measurement datum E
+has output:> conclusion 4AB statement
+#has output:> conclusion 4AB graph
+
+#GRAPH conclusion 4AB graph
+#rhbA
+#participates in:> nitrogen starvation

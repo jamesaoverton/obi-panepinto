@@ -1,0 +1,97 @@
+PREFIX Pubmed:> http://www.ncbi.nlm.nih.gov/pubmed/
+BASE http://try.humaneowl.com/paneptino/
+
+NCBITaxon:5085
+label: A. fumigatus
+
+IAO:0000115
+label: definition@en
+type:> owl:AnnotationProperty
+
+BFO:0000050
+label: part of@en
+type:> owl:ObjectProperty
+
+BFO:0000051
+label: has part@en
+type:> owl:ObjectProperty
+
+RO:0000057
+label: has participant@en
+type:> owl:ObjectProperty
+
+RO:0000056
+label: participates in@en
+type:> owl:ObjectProperty
+
+BFO:0000062
+label: preceded by@en
+type:> owl:ObjectProperty
+
+IAO:0000136
+label: is about@en
+type:> owl:ObjectProperty
+
+IAO:0000039
+label: has measurement unit label@en
+type:> owl:ObjectProperty
+
+OBI:0000293
+label: has_specified_input@en
+type:> owl:ObjectProperty
+
+OBI:0000299
+label: has_specified_output@en
+type:> owl:ObjectProperty
+
+LABEL OBI:0000293: has input
+LABEL OBI:0000299: has output
+
+<has-reagent>
+label: has reagent
+type:> owl:ObjectProperty
+comment: This is a made-up shortcut relation.
+
+<has-analyte>
+label: has analyte
+type:> owl:ObjectProperty
+comment: This is a made-up shortcut relation.
+
+OBI:0001938
+label: has value specification
+type:> owl:ObjectProperty
+
+OBI:0001937
+label: has specified value
+type:> owl:DataProperty
+
+BFO:0000015
+label: process@en
+type:> owl:Class
+
+IAO:0000300
+label: textual entity@en
+type:> owl:Class
+
+REO:0000282
+label: molecular stain
+type:> owl:Class
+
+<rhbA-primers>
+label: rhbA primers
+type:> owl:Class
+comment: This is a made-up class.
+
+<gdbA-primers>
+label: gdbA primers
+type:> owl:Class
+comment: This is a made-up class.
+
+GO:0008150
+label: biological process
+type:> owl:Class
+
+UO:0000031
+label: minute
+type:> owl:NamedIndividual
+
