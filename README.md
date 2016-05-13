@@ -22,5 +22,5 @@ Requirements:
 - Java
 - [xlsx2csv](https://github.com/dilshod/xlsx2csv)
 - [ROBOT](https://github.com/ontodev/robot)
-- [HOWL]((http://humaneowl.com)
+- [HOWL](http://humaneowl.com)
 
